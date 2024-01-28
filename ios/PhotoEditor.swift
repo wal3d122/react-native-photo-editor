@@ -58,9 +58,9 @@ class PhotoEditor: NSObject, ZLEditImageControllerDelegate {
         
         
         //Config
-        ZLImageEditorConfiguration.default().editDoneBtnBgColor = UIColor(red:255/255.0, green:238/255.0, blue:101/255.0, alpha:1.0)
+        ZLImageEditorConfiguration.default().editDoneBtnBgColor = UIColor(red:255/255.0, green:255/255.0, blue:255/255.0, alpha:1.0)
 
-         ZLImageEditorConfiguration.default().editImageTools = [  .clip, .draw, .imageSticker, .textSticker]
+         ZLImageEditorConfiguration.default().editImageTools = [  .clip, .filter, .draw, .imageSticker, .textSticker]
         
         //Clip Ratios
         if let clipRatios = options["clipRatios"] as? [String] {
@@ -89,7 +89,7 @@ class PhotoEditor: NSObject, ZLEditImageControllerDelegate {
         //Filters Lut
         do {
             let filters = ColorCubeLoader()
-            ZLImageEditorConfiguration.default().filters = try filters.load()
+            ZLImageEditorConfiguration.default().filters = [.normal, .clarendon, .nashville, .apply1977, .toaster, .chrome, .fade, .instant, .process, .transfer, .tone, .linear, .sepia, .mono, .noir, .tonal]
         } catch {
             assertionFailure("\(error)")
         }
