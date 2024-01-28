@@ -23,6 +23,10 @@ class PhotoEditor: NSObject, ZLEditImageControllerDelegate {
     
     var resolve: RCTPromiseResolveBlock!
     var reject: RCTPromiseRejectBlock!
+
+    @objc static func requiresMainQueueSetup() -> Bool {
+        return true
+    }
     
     @objc(open:withResolver:withRejecter:)
     func open(options: NSDictionary, resolve:@escaping RCTPromiseResolveBlock,reject:@escaping RCTPromiseRejectBlock) -> Void {
