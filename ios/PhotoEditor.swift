@@ -60,7 +60,31 @@ class PhotoEditor: NSObject, ZLEditImageControllerDelegate {
         //Config
         ZLImageEditorConfiguration.default().editDoneBtnBgColor = UIColor(red:255/255.0, green:238/255.0, blue:101/255.0, alpha:1.0)
 
-        ZLImageEditorConfiguration.default().editImageTools = [.draw, .clip, .filter, .imageSticker, .textSticker]
+         ZLImageEditorConfiguration.default().editImageTools = [  .clip, .draw, .imageSticker, .textSticker]
+        
+        //Clip Ratios
+        if let clipRatios = options["clipRatios"] as? [String] {
+        var ratios: [ZLImageClipRatio] = []
+        
+        for ratio in clipRatios {
+            switch ratio {
+            case "wh1x1":
+                ratios.append(.wh1x1)
+            case "wh3x4":
+                ratios.append(.wh3x4)
+            case "wh4x3":
+                ratios.append(.wh4x3)
+            case "wh2x3":
+                ratios.append(.wh2x3)
+            case "wh3x2":
+                ratios.append(.wh3x2)
+            default:
+                break
+            }
+        }
+        
+        ZLImageEditorConfiguration.default().editImageClipRatios = ratios
+    }
         
         //Filters Lut
         do {
