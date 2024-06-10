@@ -64,7 +64,7 @@ class PhotoEditor: NSObject, ZLEditImageControllerDelegate {
         //Config
         ZLImageEditorConfiguration.default().editDoneBtnBgColor = UIColor(red:255/255.0, green:255/255.0, blue:255/255.0, alpha:1.0)
 
-         ZLImageEditorConfiguration.default().editImageTools = [  .clip, .filter, .draw, .imageSticker, .textSticker]
+         ZLImageEditorConfiguration.default().editImageTools = [  .clip, .filter, .draw, .textSticker]
         
         //Clip Ratios
         if let clipRatios = options["clipRatios"] as? [String] {
