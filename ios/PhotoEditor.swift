@@ -82,7 +82,10 @@ class PhotoEditor: NSObject, ZLEditImageControllerDelegate {
                 ratios.append(.wh2x3)
             case "wh3x2":
                 ratios.append(.wh3x2)
+            case "wh10x2":
+                ratios.append(.wh10x2)
             default:
+                ratios.append(custom)
                 break
             }
         }
