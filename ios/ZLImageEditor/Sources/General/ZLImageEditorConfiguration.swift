@@ -190,6 +190,9 @@ extension ZLImageClipRatio {
     @objc public static let wh9x16 = ZLImageClipRatio(title: "9 : 16", whRatio: 9.0/16.0)
     
     @objc public static let wh16x9 = ZLImageClipRatio(title: "16 : 9", whRatio: 16.0/9.0)
+
+    @objc public static let wh10x2 = ZLImageClipRatio(title: "10 : 2", whRatio: 10.0/2.0)
+    
     
 }
 
